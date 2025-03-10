@@ -25,6 +25,19 @@ function mostrarLista(){
 }
 
 function sortearAmigo() {
-    
+    if(amigos.length == 0){
+        return alert('No hay amigos que sortear.');
+    }
+
+    numeroSecreto = parseInt(generaNumeroAleatorio());
+
+    amigoSecreto = document.getElementById('resultado');
+
+    amigoSecreto.innerHTML = `<li>${amigos[numeroSecreto]}</li>`;
+
+}
+
+function generaNumeroAleatorio(){
+    return Math.floor(Math.random()*amigos.length);
 }
 
